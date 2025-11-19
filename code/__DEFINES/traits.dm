@@ -209,6 +209,7 @@
 #define TRAIT_DEADITE "Deadite"
 #define TRAIT_PUZZLEMASTER "Puzzle Master"
 #define TRAIT_CLERGY "Clergy" // City clergy
+#define TRAIT_BAOTHA_FERTILITY_BOON "Marked by Baotha"
 // ARMOR / CLOTHING GIVEN TRAITS (GIVEN BY WEARING CLOTHES/ARMOR PIECES)
 #define TRAIT_MONK_ROBE	"Holy Vestatures"
 

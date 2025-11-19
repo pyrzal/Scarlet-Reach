@@ -331,7 +331,8 @@
 
 /datum/sex_controller/proc/after_ejaculation()
 	set_arousal(40)
-	adjust_charge(-CHARGE_FOR_CLIMAX)
+	if(!HAS_TRAIT(user, TRAIT_DEPRAVED))
+		adjust_charge(-CHARGE_FOR_CLIMAX)
 	if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
 		user.sate_addiction()
 	user.add_stress(/datum/stressevent/cumok)

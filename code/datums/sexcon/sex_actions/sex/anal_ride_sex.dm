@@ -25,7 +25,7 @@
 	return TRUE
 
 /datum/sex_action/anal_ride_sex/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.visible_message(span_warning("[user] gets on top of [target] and begins riding [target.p_them()] with [user.p_their()] butt!"))
+	user.visible_message(span_warning("[user] gets on top of [target] and begins riding [target.p_them()] with [user.p_their()] ass!"))
 	playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
 
 /datum/sex_action/anal_ride_sex/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -35,9 +35,11 @@
 
 	target.sexcon.perform_sex_action(target, 2, 0, TRUE)
 	if(target.sexcon.check_active_ejaculation())
-		target.visible_message(span_love("[target] cums into [user]'s butt!"))
+		target.visible_message(span_love("[target] cums into [user]'s ass!"))
 		target.sexcon.cum_into(splashed_user = user)
 		target.virginity = FALSE
+		if(HAS_TRAIT(user, TRAIT_BAOTHA_FERTILITY_BOON) && !user.getorganslot(ORGAN_SLOT_VAGINA))
+			target.try_impregnate(user)
 
 	if(target.sexcon.considered_limp())
 		target.sexcon.perform_sex_action(user, 1.2, 4, FALSE)

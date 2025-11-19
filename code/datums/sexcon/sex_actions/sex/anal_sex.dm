@@ -27,7 +27,7 @@
 	return TRUE
 
 /datum/sex_action/anal_sex/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.visible_message(span_warning("[user] slides [user.p_their()] cock into [target]'s butt!"))
+	user.visible_message(span_warning("[user] slides [user.p_their()] cock into [target]'s ass!"))
 	playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
 
 /datum/sex_action/anal_sex/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -40,9 +40,11 @@
 
 	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
 	if(user.sexcon.check_active_ejaculation())
-		user.visible_message(span_love("[user] cums into [target]'s butt!"))
+		user.visible_message(span_love("[user] cums into [target]'s ass!"))
 		user.sexcon.cum_into(splashed_user = target)
 		user.virginity = FALSE
+		if(HAS_TRAIT(target, TRAIT_BAOTHA_FERTILITY_BOON) && !target.getorganslot(ORGAN_SLOT_VAGINA))
+			user.try_impregnate(target)
 
 	if(user.sexcon.considered_limp())
 		user.sexcon.perform_sex_action(target, 1.2, 4, FALSE)
@@ -72,7 +74,7 @@
 	return ..()
 
 /datum/sex_action/anal_sex/double/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.visible_message(span_warning("[user] slides [user.p_their()] cocks into [target]'s butt!"))
+	user.visible_message(span_warning("[user] slides [user.p_their()] cocks into [target]'s ass!"))
 	playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
 
 /datum/sex_action/anal_sex/double/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -85,9 +87,11 @@
 
 	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
 	if(user.sexcon.check_active_ejaculation())
-		user.visible_message(span_love("[user] cums into [target]'s butt!"))
+		user.visible_message(span_love("[user] cums into [target]'s ass!"))
 		user.sexcon.cum_into(splashed_user = target)
 		user.virginity = FALSE
+		if(HAS_TRAIT(target, TRAIT_BAOTHA_FERTILITY_BOON) && !target.getorganslot(ORGAN_SLOT_VAGINA))
+			user.try_impregnate(target)
 
 	if(user.sexcon.considered_limp())
 		user.sexcon.perform_sex_action(target, 1.2, 4, FALSE)

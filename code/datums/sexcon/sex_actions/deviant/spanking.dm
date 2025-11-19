@@ -20,7 +20,7 @@
 	return TRUE
 
 /datum/sex_action/spanking/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.visible_message(span_warning("[user] positions [user.p_their()] hand to spank [target]'s butt!"))
+	user.visible_message(span_warning("[user] positions [user.p_their()] hand to spank [target]'s ass!"))
 
 /datum/sex_action/spanking/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	var/force = user.sexcon.force
