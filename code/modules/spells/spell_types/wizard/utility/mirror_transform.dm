@@ -704,14 +704,14 @@
 					should_update = TRUE
 
 		if("horn color")
-			var/obj/item/organ/ears/ears = H.getorganslot(ORGAN_SLOT_HORNS)
+			var/obj/item/organ/horns/horns = H.getorganslot(ORGAN_SLOT_HORNS)
 			if(ears)
 				var/new_color = color_pick_sanitized(H, "Choose your primary ear color", "Ear Color One", "#FFFFFF")
 				if(new_color)
-					horn.Remove(H)
+					horns.Remove(H)
 					var/list/colors = list()
-					if(horn.accessory_colors)
-						colors = color_string_to_list(horn.accessory_colors)
+					if(horns.accessory_colors)
+						colors = color_string_to_list(horns.accessory_colors)
 					if(!length(colors))
 						colors = list("#FFFFFF", "#FFFFFF") // Default colors if none set
 					colors[1] = sanitize_hexcolor(new_color, 6, TRUE)
