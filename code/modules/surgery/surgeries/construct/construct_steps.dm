@@ -93,7 +93,7 @@
 /// Drill bone
 /datum/surgery_step/drill/construct
     name = "Drill inner-structure"
-    surgery_flags = SURGERY_BLOODY | SURGERY_INCISED | SURGERY_RETRACTED | SURGERY_CONSTRUCT
+    surgery_flags = SURGERY_INCISED | SURGERY_RETRACTED | SURGERY_CONSTRUCT
     surgery_flags_blocked = SURGERY_BROKEN
     skill_used = /datum/skill/craft/engineering
 
@@ -107,3 +107,34 @@
 	var/obj/item/bodypart/bodypart = target.get_bodypart(check_zone(target_zone))
 	bodypart?.add_wound(/datum/wound/puncture/drilling)
 	return TRUE
+
+/// Extract lux (Kills dah construct btw)
+
+/datum/surgery_step/extract_lux/construct
+	surgery_flags = SURGERY_INCISED | SURGERY_CLAMPED | SURGERY_RETRACTED | SURGERY_BROKEN | SURGERY_CONSTRUCT
+    surgery_flags_blocked = null
+    skill_used = /datum/skill/craft/engineering
+
+/datum/surgery_step/extract_lux/construct/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	display_results(user, target, span_notice("I begin to extract the lux from [target]'s core... This seems like a bad idea."),
+		span_notice("[user] begins to extract the lux from [target]'s core."),
+		span_notice("[user] begins to extract the lux from [target]'s core."))
+	return TRUE
+
+/datum/surgery_step/extract_lux/construct/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	display_results(user, target, span_notice("You extract a singular source of lux from [target]'s core, killing them."),
+		"[user] extracts lux from [target]'s innards, killing them.",
+		"[user] extracts lux from [target]'s innards, killing them.")
+	new /obj/item/reagent_containers/lux(target.loc)
+	SEND_SIGNAL(user, COMSIG_LUX_EXTRACTED, target)
+	record_round_statistic(STATS_LUX_HARVESTED)
+	target.death()
+	target.emote(message = "siezes up, the soft hum of their core dying out as they go still as a statue.", forced = TRUE)
+	return TRUE
+
+/// Reshape face.
+
+/datum/surgery_step/reshape_face/construct // Just doing this so they can have their own surgery. Doesn't change anything.
+	surgery_flags = SURGERY_CONSTRUCT | SURGERY_INCISED | SURGERY_CLAMPED | SURGERY_RETRACTED
+	surgery_flags_blocked = null
+	skill_used = /datum/skill/craft/engineering
