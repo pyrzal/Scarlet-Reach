@@ -93,6 +93,7 @@
 	can_roll = FALSE
 	downgrade_wave = /datum/migrant_wave/heartfelt_down_eight
 	roles = list(
+		/datum/migrant_role/heartfelt/lord = 1,
 		/datum/migrant_role/heartfelt/knight = 1,
 	)
 	greet_text = "Fleeing disaster, you came together as a court, united in a final effort to restore the former glory and promise of Heartfelt. Now, in the end, it is only the Lord and their trusty knight left on their lonesome..."
@@ -103,6 +104,7 @@
 	can_roll = FALSE
 	downgrade_wave = /datum/migrant_wave/heartfelt_down_nine
 	roles = list(
+		/datum/migrant_role/heartfelt/lord = 1,
 		/datum/migrant_role/heartfelt/hand = 1,
 	)
 	greet_text = "Fleeing disaster, you came together as a court, united in a final effort to restore the former glory and promise of Heartfelt. Now, in the end, it is only the Lord and their trusty Hand left on their lonesome..."
@@ -113,6 +115,7 @@
 	downgrade_wave = /datum/migrant_wave/heartfelt_down_ten
 	can_roll = FALSE
 	roles = list(
+		/datum/migrant_role/heartfelt/lord = 1,
 		/datum/migrant_role/heartfelt/retinue = 1,
 	)
 	greet_text = "Fleeing disaster, you have came together as a court, united in a final effort to restore the former glory and promise of Heartfelt. Now, in the end, it is only the Lord and their last loyal follower left on their lonesome..."
