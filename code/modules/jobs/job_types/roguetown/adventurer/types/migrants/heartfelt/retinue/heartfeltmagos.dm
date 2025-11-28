@@ -74,5 +74,3 @@
 		head = /obj/item/clothing/head/roguetown/wizhat
 		armor = /obj/item/clothing/suit/roguetown/shirt/robe/wizard
 		H.dna.species.soundpack_m = new /datum/voicepack/male/wizard()
-	for(var/S in spells)
-		H.mind.AddSpell(new S)
