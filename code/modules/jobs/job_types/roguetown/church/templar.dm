@@ -142,7 +142,7 @@
 
 /datum/outfit/job/roguetown/templar/monk/choose_loadout(mob/living/carbon/human/H)
 	. = ..()
-	var/weapons = list("Katar","Knuckle Dusters")
+	var/weapons = list("Katar","Knuckle Dusters", "Quarterstaff")
 	switch(H.patron?.type)
 		if(/datum/patron/divine/eora)
 			weapons += "Close Caress"
@@ -159,7 +159,10 @@
 			H.put_in_hands(new /obj/item/rogueweapon/knuckles/eora(H), TRUE)
 		if("Barotrauma")
 			H.put_in_hands(new /obj/item/rogueweapon/katar/abyssor(H), TRUE)
-
+		if("Quarterstaff")
+			H.put_in_hands(new /obj/item/rogueweapon/woodstaff/quarterstaff/steel(H), TRUE)
+			H.adjust_skillrank(/datum/skill/combat/polearms, SKILL_LEVEL_MASTER, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/unarmed, SKILL_LEVEL_NOVICE, TRUE)
 
 	// -- Start of section for god specific bonuses --
 	if(H.patron?.type == /datum/patron/divine/astrata)
