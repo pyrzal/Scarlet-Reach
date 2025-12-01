@@ -707,7 +707,7 @@
 	grid_width = 32
 	grid_height = 32
 
-/obj/item/clothing/neck/roguetown/gorget
+/obj/item/clothing/neck/roguetown/gorget/ogre
 	name = "weirdly big gorget"
 	desc = "It might be possible to fit this ontop of some human shoulders."
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/32x64/ogre_onmob.dmi'

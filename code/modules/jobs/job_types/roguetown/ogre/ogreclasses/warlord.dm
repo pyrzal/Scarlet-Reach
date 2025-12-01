@@ -31,7 +31,7 @@
 		to_chat(H, span_warning("A great war horn sounds from the bog land, the call of war from a monster of noble blood."))
 		shoes = /obj/item/clothing/shoes/roguetown/armor/ogre
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ogre
-		neck = /obj/item/clothing/neck/roguetown/gorget
+		neck = /obj/item/clothing/neck/roguetown/gorget/ogre
 		pants = /obj/item/clothing/under/roguetown/chainlegs/ogre
 		gloves = /obj/item/clothing/gloves/roguetown/plate/ogre
 		wrists = /obj/item/clothing/wrists/roguetown/bracers/ogre

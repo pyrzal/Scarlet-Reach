@@ -17,9 +17,9 @@
 	round_contrib_points = 2
 	advclass_cat_rolls = list(CTAG_OGRE = 20)
 	PQ_boost_divider = 10
-	announce_latejoin = FALSE
 	advjob_examine = TRUE
 	always_show_on_latechoices = TRUE
 	cmode_music = 'sound/music/combat.ogg'
 
 	job_traits = list(TRAIT_OUTLANDER)
+
