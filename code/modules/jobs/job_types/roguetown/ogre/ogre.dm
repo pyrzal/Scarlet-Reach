@@ -21,5 +21,4 @@
 	always_show_on_latechoices = TRUE
 	cmode_music = 'sound/music/combat.ogg'
 
-	job_traits = list(TRAIT_OUTLANDER)
-
+	job_traits = list(TRAIT_OUTLANDER, TRAIT_STEELHEARTED)
