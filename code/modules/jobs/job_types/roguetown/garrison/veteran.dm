@@ -102,7 +102,10 @@
 	belt = /obj/item/storage/belt/rogue/leather/black
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
 
-	if(H.age == AGE_OLD)
+	if(H.age == AGE_MIDDLEAGED)
+		ADD_TRAIT(H,TRAIT_GOODTRAINER,TRAIT_GENERIC) // SR edit
+
+	else if(H.age == AGE_OLD)
 		H.adjust_skillrank_up_to(/datum/skill/combat/swords, 6, TRUE)
 		H.adjust_skillrank_up_to(/datum/skill/combat/maces, 6, TRUE)
 		H.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 5, TRUE)
@@ -170,8 +173,10 @@
 		/obj/item/rope/chain = 1,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
 	)
+	if(H.age == AGE_MIDDLEAGED)
+		ADD_TRAIT(H,TRAIT_GOODTRAINER,TRAIT_GENERIC) // SR edit
 
-	if(H.age == AGE_OLD)
+	else if(H.age == AGE_OLD)
 		H.adjust_skillrank_up_to(/datum/skill/combat/shields, 6, TRUE)
 		H.adjust_skillrank_up_to(/datum/skill/combat/polearms, 6, TRUE)
 		H.adjust_skillrank_up_to(/datum/skill/combat/swords, 5, TRUE)
@@ -219,7 +224,7 @@
 	)
 
 // You get a SAIGA. Saigas are pretty good, you lose out on your legendary weapon skills and you suck more on foot though.
-
+// Scarlet reach editor's note: This subclass fucking rots. Needs a rework.
 /datum/outfit/job/roguetown/vet/cavalryman/pre_equip(mob/living/carbon/human/H)
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/	////Former knights should have knightly armour.
@@ -239,6 +244,7 @@
 	)
 
 	if(H.age == AGE_OLD)
+		ADD_TRAIT(H,TRAIT_GOODTRAINER,TRAIT_GENERIC) // SR edit. Also, this subclass probably needs a buff.
 		H.adjust_skillrank_up_to(/datum/skill/combat/bows, 5, TRUE)
 		H.adjust_skillrank_up_to(/datum/skill/combat/swords, 5, TRUE)
 		H.adjust_skillrank_up_to(/datum/skill/combat/maces, 5, TRUE) // You get a lot of weapon skills, but none are legendary. Jack of all trades, master of none. This is probably worse than just having legendary in one, as people rarely swap weapons mid-combat.
@@ -334,6 +340,7 @@
 			H.change_stat("speed", -1)
 			H.change_stat("strength", 2)
 			if(H.age == AGE_OLD)
+				ADD_TRAIT(H,TRAIT_GOODTRAINER,TRAIT_GENERIC)
 				H.adjust_skillrank_up_to(/datum/skill/combat/swords, 5, TRUE)
 				H.adjust_skillrank_up_to(/datum/skill/combat/axes, 5, TRUE)
 				H.adjust_skillrank_up_to(/datum/skill/combat/polearms, 5, TRUE)
@@ -450,7 +457,9 @@
 			H.change_stat("perception", 3) // you are OLD you have OLD EYES. this is to counter that debuff so you can be OBSERVANT. You sacrifice your strength and armor, so.
 			H.change_stat("speed", 2)
 			H.change_stat("intelligence", 2)
-			if(H.age == AGE_OLD)
+			if (H.age == AGE_MIDDLEAGED)
+				ADD_TRAIT(H, TRAIT_GOODTRAINER, TRAIT_GENERIC)
+			else if(H.age == AGE_OLD)
 				H.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 6, TRUE)
 				H.adjust_skillrank_up_to(/datum/skill/combat/swords, 5, TRUE)
 				H.adjust_skillrank_up_to(/datum/skill/combat/knives, 6, TRUE)
@@ -523,8 +532,9 @@
 		/obj/item/storage/keyring/guardcastle = 1,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
 	)
-
-	if(H.age == AGE_OLD)
+	if(H.age == AGE_MIDDLEAGED)
+		ADD_TRAIT(H,TRAIT_GOODTRAINER,TRAIT_GENERIC)
+	else if(H.age == AGE_OLD)
 		H.adjust_skillrank_up_to(/datum/skill/combat/bows, 6, TRUE)
 		H.adjust_skillrank_up_to(/datum/skill/combat/swords, 5, TRUE)
 		H.adjust_skillrank_up_to(/datum/skill/combat/axes, 6, TRUE)
