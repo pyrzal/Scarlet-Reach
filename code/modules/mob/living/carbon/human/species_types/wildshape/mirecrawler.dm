@@ -172,35 +172,3 @@
 	miss_sound = "bluntswoosh"
 	item_d_type = "slash"
 
-// Spider claw spell
-/obj/effect/proc_holder/spell/self/spiderclaw
-	name = "Spider Fangs"
-	desc = "Extend your fangs."
-	overlay_state = "claws"
-	antimagic_allowed = TRUE
-	recharge_time = 40
-	ignore_cockblock = TRUE
-	var/extended = FALSE
-
-/obj/effect/proc_holder/spell/self/spiderclaw/cast(mob/user = usr)
-	..()
-	var/obj/item/rogueweapon/mole_claw/left/l
-	var/obj/item/rogueweapon/mole_claw/right/r
-
-	l = user.get_active_held_item()
-	r = user.get_inactive_held_item()
-	if(extended)
-		if(istype(l, /obj/item/rogueweapon/mole_claw))
-			user.dropItemToGround(l, TRUE)
-			qdel(l)
-		if(istype(r, /obj/item/rogueweapon/mole_claw))
-			user.dropItemToGround(r, TRUE)
-			qdel(r)
-		extended = FALSE
-	else
-		l = new(user,1)
-		r = new(user,2)
-		user.put_in_hands(l, TRUE, FALSE, TRUE)
-		user.put_in_hands(r, TRUE, FALSE, TRUE)
-		extended = TRUE
-
