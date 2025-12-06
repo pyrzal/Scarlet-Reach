@@ -1028,6 +1028,8 @@
 		/obj/item/reagent_containers/glass/bowl/gold,
 		/obj/item/kitchen/spoon/gold,
 		/obj/item/kitchen/spoon/silver,
+		/obj/item/kitchen/fork/gold,
+		/obj/item/kitchen/fork/silver,
 		/obj/item/candle/candlestick/gold,
 		/obj/item/candle/candlestick/silver,
 		/obj/item/rogueweapon/sword/long/judgement, // various unique weapons around from a few roles follows. Don't lose your fancy toys.... 
@@ -1041,6 +1043,8 @@
 		/obj/item/weapon/knife/stone/opal,
 		/obj/item/clothing/face/carved,
 		/obj/item/clothing/neck/carved,
+		/obj/item/kitchen/fork/carved,
+		/obj/item/kitchen/spoon/carved,
 		/obj/item/clothing/wrists/roguetown/gem,
 		/obj/item/reagent_containers/glass/bowl/carved,
 		/obj/item/reagent_containers/glass/bucket/pot/carved
