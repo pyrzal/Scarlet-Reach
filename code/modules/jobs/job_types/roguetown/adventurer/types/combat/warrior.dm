@@ -253,7 +253,7 @@
 	//miracles 
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_miracles(H, cleric_tier = CLERIC_T0, passive_gain = FALSE, devotion_limit = (CLERIC_REQ_1 - 20))
-	var/armor = list("Dodge Expert + Studded Leathers", "Cuirass + Alchemy")
+	var/armor = list("Dodge Expert + Studded Leathers", "Cuirass + Rotbite Immune")
 	var/armor_choice = input("How will you survive?", "DRESS YOURSELF") as anything in armor
 	switch(armor_choice)
 		if("Dodge Expert + Studded Leathers") //Be the swift little shit you always wanted to be. Nothing on your head or legs to save you though!
