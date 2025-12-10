@@ -69,40 +69,40 @@ LICH SKELETONS
 		if("Gladius")
 			beltr = /obj/item/rogueweapon/sword/iron/short/gladius/pagladius
 			backr = /obj/item/rogueweapon/shield/wood
-			H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+			H.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
 		if("Kopesh")
 			beltr = /obj/item/rogueweapon/sword/sabre/palloy
 			backr = /obj/item/rogueweapon/shield/wood
-			H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+			H.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
 		if("Shortsword")
 			beltr = /obj/item/rogueweapon/sword/short/pashortsword
 			backr = /obj/item/rogueweapon/shield/wood
-			H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+			H.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
 		if("Axe")
 			beltr = /obj/item/rogueweapon/stoneaxe/woodcut/steel/paaxe
 			backr = /obj/item/rogueweapon/shield/wood
-			H.adjust_skillrank(/datum/skill/combat/axes, 4, TRUE)
+			H.adjust_skillrank_up_to(/datum/skill/combat/axes, 4, TRUE)
 		if("Flail")
 			beltr = /obj/item/rogueweapon/flail/sflail/paflail
 			backr = /obj/item/rogueweapon/shield/wood
-			H.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE)
+			H.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 4, TRUE)
 		if("Greatsword")
 			r_hand = /obj/item/rogueweapon/greatsword/paalloy
-			H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+			H.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
 		if("Bardiche")
 			r_hand = /obj/item/rogueweapon/halberd/bardiche/paalloy
-			H.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
+			H.adjust_skillrank_up_to(/datum/skill/combat/polearms, 4, TRUE)
 		if("Mace + Shield")
 			r_hand = /obj/item/rogueweapon/mace/steel/palloy
 			l_hand = /obj/item/rogueweapon/shield/wood
-			H.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
+			H.adjust_skillrank_up_to(/datum/skill/combat/maces, 4, TRUE)
 		if("Spear")
 			r_hand = /obj/item/rogueweapon/spear/paalloy
-			H.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
+			H.adjust_skillrank_up_to(/datum/skill/combat/polearms, 4, TRUE)
 		if("Warhammer + Shield")
 			r_hand = /obj/item/rogueweapon/mace/warhammer/steel/paalloy
 			l_hand = /obj/item/rogueweapon/shield/wood
-			H.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
+			H.adjust_skillrank_up_to(/datum/skill/combat/maces, 4, TRUE)
 
 // Ranged goon w/ a dumb bow. Ranger, what else is there to say.
 /datum/advclass/greater_skeleton/lich/ballistiares
