@@ -53,7 +53,7 @@
 
 	// Apply fire damage
 	H.adjustFireLoss(40)
-	H.adjust_fire_stacks(10, /datum/status_effect/fire_handler/fire_stacks/sunder)
+	H.adjust_fire_stacks(6, /datum/status_effect/fire_handler/fire_stacks/sunder)
 	H.ignite_mob()
 
 	// Freak out if on fire
