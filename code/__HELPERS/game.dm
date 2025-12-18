@@ -301,14 +301,61 @@
 	O.screen_loc = screen_loc
 	return O
 
+
+GLOBAL_LIST_EMPTY(image_removal_pool)
+
+GLOBAL_LIST_EMPTY(image_removal_timers)
+
+GLOBAL_LIST_EMPTY(image_client_tracker)
+
 /proc/remove_images_from_clients(image/I, list/show_to)
 	for(var/client/C in show_to)
 		C.images -= I
 
+/proc/process_image_removal_batch(time_key)
+	var/list/batch = GLOB.image_removal_pool[time_key]
+	if(!batch)
+		GLOB.image_removal_timers -= time_key
+		return
+
+	for(var/entry in batch)
+		var/list/entry_data = entry
+		var/image/I = entry_data[1]
+		var/list/clients = entry_data[2]
+
+		for(var/client/C in clients)
+			C.images -= I
+			var/tracker_key = "[REF(I)]_[REF(C)]"
+			GLOB.image_client_tracker -= tracker_key
+
+	GLOB.image_removal_pool -= time_key
+	GLOB.image_removal_timers -= time_key
+
 /proc/flick_overlay(image/I, list/show_to, duration)
+	if(!show_to || !length(show_to))
+		return
+
+	var/expire_time = world.time + duration
+	var/time_key = "[expire_time]"
+
+	var/list/new_clients = list()
 	for(var/client/C in show_to)
-		C.images += I
-	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(remove_images_from_clients), I, show_to), duration, TIMER_CLIENT_TIME)
+		var/tracker_key = "[REF(I)]_[REF(C)]"
+		if(!GLOB.image_client_tracker[tracker_key])
+			new_clients += C
+			C.images += I
+			GLOB.image_client_tracker[tracker_key] = time_key
+
+	if(!length(new_clients))
+		return
+
+	if(!GLOB.image_removal_pool[time_key])
+		GLOB.image_removal_pool[time_key] = list()
+
+	GLOB.image_removal_pool[time_key] += list(list(I, new_clients))
+
+	if(!GLOB.image_removal_timers[time_key])
+		GLOB.image_removal_timers[time_key] = addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(process_image_removal_batch), time_key), duration, TIMER_CLIENT_TIME | TIMER_STOPPABLE)
 
 /proc/flick_overlay_view(image/I, atom/target, duration) //wrapper for the above, flicks to everyone who can see the target atom
 	var/list/viewing = list()
